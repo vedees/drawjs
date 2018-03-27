@@ -1,0 +1,49 @@
+extends layout/main
+
+block variables
+  - var pageClass        = 'Drawer JS'
+  - var title            = 'Drawer JS'
+  - var description      = 'Description for Drawer JS'
+
+
+block content
+  .app
+    h1 
+      | Hello! Draw it!
+    .draw 
+      canvas#canvas(width='800px', height='600px')
+      ul#color-palettre
+    
+    .controls
+      button#new_color__button
+      button#canvas_clear__button
+
+      input(type='range' id='brush-size-slider' min='1' max='10' value='1')
+      
+      #color-picker
+        span.color-picker__preview
+
+        .color-picker__sliders
+          label R
+            input.color-picker__slider(type='range' id='red' name='red' min='0' max='255' value='0')
+          label G
+            input.color-picker__slider(type='range' id='green' name='red' min='0' max='255' value='0')
+          label B
+            input.color-picker__slider(type='range' id='blue' name='red' min='0' max='255' value='0')
+
+        .color-picker__controls
+          button.color-picker__add-button
+            | Check
+            
+          button.color-picker__close-button
+            | Clear
+
+
+
+
+block script
+  script(src='static/js/color-palette.js')
+  script(src='static/js/color-picker.js') 
+  script(src='static/js/app.js') 
+  script(src='static/js/index.js') 
+  // script(src='') 

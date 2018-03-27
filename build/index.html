@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge, chrome = 1"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Drawer JS</title>
+    <meta name="description" content="Description for Drawer JS">
+    <link rel="stylesheet" href="static/css/main.css">
+  </head>
+  <body class="Drawer JS">
+    <div class="wrapper">
+      <header>
+        <!--header is here-->
+      </header>
+      <div class="content-wrapper">
+        <div class="app">
+          <h1>
+             Hello! Draw it!</h1>
+          <div class="draw"> 
+            <canvas id="canvas" width="800px" height="600px"></canvas>
+            <ul id="color-palettre"></ul>
+          </div>
+          <div class="controls">
+            <button id="new_color__button"></button>
+            <button id="canvas_clear__button"></button>
+            <input type="range" id="brush-size-slider" min="1" max="10" value="1">
+            <div id="color-picker"><span class="color-picker__preview"></span>
+              <div class="color-picker__sliders">
+                <label>R
+                  <input class="color-picker__slider" type="range" id="red" name="red" min="0" max="255" value="0">
+                </label>
+                <label>G
+                  <input class="color-picker__slider" type="range" id="green" name="red" min="0" max="255" value="0">
+                </label>
+                <label>B
+                  <input class="color-picker__slider" type="range" id="blue" name="red" min="0" max="255" value="0">
+                </label>
+              </div>
+              <div class="color-picker__controls">
+                <button class="color-picker__add-button">Check</button>
+                <button class="color-picker__close-button">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <!--footer is here-->
+      </footer>
+    </div>
+    <script src="static/js/color-palette.js"></script>
+    <script src="static/js/color-picker.js"> </script>
+    <script src="static/js/app.js"> </script>
+    <script src="static/js/index.js"> </script>
+    <!-- script(src='') -->
+  </body>
+</html>
