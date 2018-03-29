@@ -457,6 +457,7 @@ html {
 }
 body {
   font-family: Arial, sans-serif;
+  background-color: #f1f2f6;
 }
 h1,
 h2,
@@ -534,21 +535,7 @@ button {
       -ms-flex: 1;
           flex: 1;
 }
-.g-section-title {
-  font-size: 34px;
-  color: #000;
-}
-.g-section-title.g-section-title--white {
-  color: #fff;
-}
-.g-mini-title {
-  font-size: 24px;
-  color: #000;
-}
-.g-mini-title.g-mini-title--white {
-  color: #fff;
-}
-.app {
+#app {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -562,7 +549,7 @@ button {
   padding: 60px 30px;
 }
 #canvas {
-  background-color: #f1f2f6;
+  background-color: #fff;
 }
 button {
   background-color: #4caf50;
@@ -575,6 +562,23 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.draw {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.color-palette__color {
+  height: 32px;
+  width: 32px;
+  margin-bottom: 8px;
+  border-radius: 60px;
+  cursor: pointer;
+  border: 0;
+}
+.color-palette__color.selected {
+  width: 40px;
+  height: 40px;
 }
 
 /*# sourceMappingURL=main.css.map */
