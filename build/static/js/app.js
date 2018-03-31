@@ -1,7 +1,7 @@
 class App {
-	constructor({canvas, colorPallete, colorPicker }){
+	constructor({canvas, colorPalette, colorPicker }){
 		this.canvas = canvas;
-		this.colorPallete = colorPallete;
+		this.colorPalette = colorPalette;
 		this.colorPicker = colorPicker;
 
 		//Context for draw in canvas
@@ -28,10 +28,20 @@ class App {
 		//Мышь покидает приделы канваса
 		this.canvas.addEventListener('mouseleave', this.handleCanvasMouseleave.bind(this));
 
+		this.colorPicker.onAdd = color => this.colorPalette.addColor(color);
+
+		//Очистка
 		document.querySelector('#canvas_clear__button')
 			.addEventListener('click', this.handleCanvasClear.bind(this));
+		//Ластик
+		document.querySelector('#canvas_clear__eraser')
+			.addEventListener('click', this.handleCanvasEraser.bind(this));
+		//Размер кисти
 		document.querySelector('#brush-size-slider')
 			.addEventListener('change', this.handleBrashSizeChange.bind(this));
+
+		document.querySelector('#new-color-button')
+			.addEventListener('click', this.handleNewColorButton.bind(this));
 	}
 
 	handleCanvasMousedown(event) {
@@ -49,16 +59,12 @@ class App {
 			//Рисуем линию
 			this.context.lineTo(event.offsetX, event.offsetY);  
 
-			//FIX IT - не может вытащить currentColor
 			//Берем текущий цвет из палитры
-			// this.context.strokeStyle = this.colorPallete.currentColor;
-
+			this.context.strokeStyle = this.colorPalette.currentColor;
 			//Проводим линию
 			this.context.stroke();
 			//Текущее событие делаем последним, чтобы зналть, что последнее для след рисунка
 			this.lastEvent = event;
-		}else{
-			console.log('oops')
 		}
 	}
 
@@ -79,11 +85,18 @@ class App {
 		this.context.fillRect(0,0, this.canvas.width, this.canvas.height);
 	}
 
+	handleCanvasEraser(event){
+		//?
+	}
+
 	handleBrashSizeChange(event){
 		//Изменение размера кисти
 		//Number переведет строку в число
 		this.context.lineWidth = Number(event.target.value);
 	}
 
+	handleNewColorButton(event){
+		this.colorPicker.open();
+	}
 }
 

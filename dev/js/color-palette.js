@@ -1,6 +1,7 @@
 class ColorPalette {
 	constructor({ element, colors = [] }){
 		this.element = element;
+
 		this.colorElements = [];    //Цвета, на которые пользователь будет кликать
 
 		this.colors = colors;
@@ -34,7 +35,7 @@ class ColorPalette {
 		if(target.tagName === 'LI') {
 			this.currentColor = target.style.backgroundColor;
 			console.log(this.currentColor);
-			
+
 			//Прогоняем цвета из масива для присваивания класса и убираем лишние .selected
 			for(let colorElement of this.colorElements){
 				colorElement.classList.remove('selected');
@@ -43,4 +44,10 @@ class ColorPalette {
 
 		}
 	}
+
+	//FIX
+	addColor(color){
+		console.log(color);
+	}
+
 }

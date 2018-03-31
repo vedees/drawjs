@@ -546,39 +546,96 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 60px 30px;
+  padding: 10px 20px;
 }
-#canvas {
+canvas {
+  width: 100%;
   background-color: #fff;
+  margin-bottom: 12px;
 }
 button {
-  background-color: #4caf50;
+  background-color: #4a90e2;
   color: #fff;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
+  padding: 10px 18px;
 }
-.controls {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.draw {
+#color-palette {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 54px;
 }
 .color-palette__color {
   height: 32px;
   width: 32px;
-  margin-bottom: 8px;
   border-radius: 60px;
   cursor: pointer;
-  border: 0;
+  margin-right: 10px;
+}
+.color-palette__color:last-child {
+  margin-right: 0;
 }
 .color-palette__color.selected {
   width: 40px;
   height: 40px;
+}
+#color-picker {
+  background: #fff;
+  border-radius: 5px;
+  clear: both;
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 305px;
+  position: relative;
+  display: none;
+}
+#color-picker:after {
+  bottom: 100%;
+  left: 24px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255,255,255,0);
+  border-bottom-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.color-picker__preview {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  float: left;
+  border: none;
+  margin: 10px 20px 20px 10px;
+}
+.color-picker__sliders {
+  float: right;
+}
+.color-picker__sliders label {
+  margin: 8px 0;
+  vertical-align: middle;
+  display: block;
+  margin: 0 10px 0 0;
+  font-size: 14px;
+  color: #6d574e;
+}
+.color-picker__sliders input {
+  position: relative;
+  top: 2px;
+}
+.color-picker__controls {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 /*# sourceMappingURL=main.css.map */
