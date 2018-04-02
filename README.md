@@ -3,14 +3,14 @@
 Object-oriented native JavaScript.
 </p>
 
-<h2>DEMO [HERE](https://vedees.github.io/drawjs/build)</h2>
+<h2>DEMO <a href="https://vedees.github.io/drawjs/build" target="_blank">HERE</a></h2>
 <p>
 
-Demo from the ['/build'](https://vedees.github.io/drawjs/build)
+Demo from the <a href="https://vedees.github.io/drawjs/build" target="_blank">/build</a>
 </p>
 
 <p align="center">
-    ![Preview](https://github.com/vedees/drawjs/raw/master/build/static/img/preview.png)
+<img src="https://github.com/vedees/drawjs/raw/master/build/static/img/preview.png" alt="Preview">
 </p>
 
 <h3>Installing</h3>
