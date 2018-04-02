@@ -16,11 +16,8 @@ class App {
 	init() {
 		this.context = this.canvas.getContext('2d');
 
-			//bind(this) - Жесткая привязка к THIS, если нужно отправить куда-то метод класса и предварительно его
-			//нужно превязать иначе конекст потеряется.
-		
 		//Надавливание мышкой
-		this.canvas.addEventListener('mousedown',  this.handleCanvasMousedown.bind(this));  
+		this.canvas.addEventListener('mousedown',  this.handleCanvasMousedown.bind(this));
 		//Движение мышкой
 		this.canvas.addEventListener('mousemove',  this.handleCanvasMousemove.bind(this));
 		//Отпускание мыши
@@ -39,7 +36,7 @@ class App {
 		//Размер кисти
 		document.querySelector('#brush-size-slider')
 			.addEventListener('change', this.handleBrashSizeChange.bind(this));
-
+        //Меню с выбором цветов
 		document.querySelector('#new-color-button')
 			.addEventListener('click', this.handleNewColorButton.bind(this));
 	}

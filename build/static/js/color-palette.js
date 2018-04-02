@@ -13,21 +13,10 @@ class ColorPalette {
 		//Обработки клика пол li
 		this.element.addEventListener('click', this.handleColorSelected.bind(this));
 
-		/*
-		На каждый color мы создаем li, 
-		Указываем класс, 
-		Меняем значение бэкграунда, 
-		Добавляем элемент в li, 
-		Добавляем в массив colorElements
-		*/
-		for (let color of this.colors){
-			let li = document.createElement('li');
-			li.className = 'color-palette__color';
-			li.style.backgroundColor = `rgb(${color.red},${color.green},${color.blue})`;
-			this.element.appendChild(li); //Добавлять li элемент в сам li
-			this.colorElements.push(li);  //Отслеживание выбранного цвета
-
-		}
+		//Перебор цветов из функции addColorElement()
+        for (let color of this.colors){
+            this.addColorElement(color);
+        }
 	}
 
 	handleColorSelected({ target }) {
@@ -45,9 +34,23 @@ class ColorPalette {
 		}
 	}
 
-	//FIX
 	addColor(color){
-		console.log(color);
+		this.addColorElement(color);
 	}
+
+	addColorElement(color){
+        /*
+        На каждый color мы создаем li,
+        Указываем класс,
+        Меняем значение бэкграунда,
+        Добавляем элемент в li,
+        Добавляем в массив colorElements
+        */
+        let li = document.createElement('li');
+        li.className = 'color-palette__color';
+        li.style.backgroundColor = `rgb(${color.red},${color.green},${color.blue})`;
+        this.element.appendChild(li); //Добавлять li элемент в сам li
+        this.colorElements.push(li);  //Отслеживание выбранного цвета
+    }
 
 }
