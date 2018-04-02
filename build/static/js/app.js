@@ -83,7 +83,7 @@ class App {
 	}
 
 	handleCanvasEraser(event){
-		//?
+        this.colorPalette.currentColor = `white`;
 	}
 
 	handleBrashSizeChange(event){
